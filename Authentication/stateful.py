@@ -1,7 +1,7 @@
 import uuid
 
 import redis
-from fastapi import Depends, FastAPI, HTTPException, Request, Response, status
+from fastapi import Depends, FastAPI, HTTPException, Request, Response
 from fastapi.security import OAuth2PasswordRequestForm
 
 app = FastAPI()
@@ -62,4 +62,3 @@ def logout(response: Response, request: Request):
     response.delete_cookie("session_id")
 
     return {"message": "logged out succesfully"}
-
